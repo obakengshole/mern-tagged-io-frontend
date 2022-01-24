@@ -3,7 +3,8 @@ import {
   useNavigate
 } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import { Container, Button } from "reactstrap";
+import { Button } from "reactstrap";
+import Container from '@mui/material/Container'
 
 const MonitorCard = (props) => {
   const { monitor } = props;
