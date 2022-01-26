@@ -63,6 +63,7 @@ const Home = () => {
 
   return (
     <div>
+      <p/>
       {/* <Button variant="contained" size="large" href="/topic/monitors">Laptops</Button> */}
       {/* <Button
         variant="contained"
@@ -75,6 +76,8 @@ const Home = () => {
 
       {topics.map((topic) => {
         return (
+          <div>
+            <p />
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea
               onClick={() => navigate(`/topic/${topic.name}`)}
@@ -82,7 +85,7 @@ const Home = () => {
               <CardMedia
                 component="img"
                 height="149"
-                image={topic.img}
+                image={topic.image}
                 alt="laptop"
               />
               <CardContent>
@@ -92,7 +95,8 @@ const Home = () => {
               </CardContent>
             </CardActionArea>
           </Card>
-        );
+        </div>
+        )
       })}
     </div>
   );

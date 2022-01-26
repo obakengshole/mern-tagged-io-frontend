@@ -14,7 +14,7 @@ const MonitorDetails = () => {
     const monitor = getMonitor(monitorId)
     console.log('found monitor', monitor.id);
 
-    const { img, title, text } = monitor
+    const { image, title, text } = monitor
     const navigate = useNavigate()
 
     const back = () => {

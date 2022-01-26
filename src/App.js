@@ -10,7 +10,7 @@ import {
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-import { Monitors, MonitorCrd } from "./tech/pages/Monitors";
+import { Monitors, MonitorCard } from "./tech/pages/Monitors";
 import { Container } from "reactstrap";
 import MonitorDetails from "./tech/pages/MonitorDetails";
 import Home from "./tech/pages/Home";
@@ -25,6 +25,8 @@ import Menu from "@mui/material/Menu";
 import { InputBase, MenuItem, Toolbar } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Topics from "./tech/pages/Topics";
+import LaptopDetails from "./tech/pages/LaptopDetails";
+import Laptops from "./tech/pages/Laptops";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -113,13 +115,16 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/topic/laptops" element={<Topics topic="laptops" />}>
-            <Route path=":monitorId" element={<MonitorDetails />} />
-          </Route>
-          <Route path="/topic/monitors" element={<Monitors />}></Route>
-          <Route path="/monitordetails">
-            <Route path=":monitorId" element={<MonitorDetails />} />
-          </Route>
+          <Route path="/topic/laptops" element={<Laptops />}/>
+            <Route path="/laptopdetails">
+              <Route path=":monitorId" element={<LaptopDetails />} />
+            </Route>
+          {/* </Route> */}
+          <Route path="/topic/monitors" element={<Monitors />}/>
+            <Route path="/monitordetails">
+              <Route path=":monitorId" element={<MonitorDetails />} />
+            </Route>
+          {/* </Route> */}
           {/* <Route component={Error} /> */}
         </Routes>
       </Container>
