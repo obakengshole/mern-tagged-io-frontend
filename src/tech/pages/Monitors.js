@@ -23,35 +23,41 @@ export const Monitors = () => {
 
   return (
     <div>
-      <Box sx={{
-        width: 300,
-        height: 60
-      }}>
-      <Button variant="contained" color="secondary" onClick={back}>
-        Back{" "}
-      </Button>
-
-        
+      <Box
+        sx={{
+          width: 300,
+          height: 60,
+        }}
+      >
+        <Button variant="contained" color="secondary" onClick={back}>
+          Back{" "}
+        </Button>
       </Box>
       {/* <ResponsiveGrid /> */}
-      
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
-      {monitors.map((monitor) => {
-        {/* <Grid container spacing={{ xs: 2, sm: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}> */}
-        return (
-          <Grid item xs={2} sm={4} md={4}>
-            <MonitorCard key={monitor.id} monitor={monitor} />
-          </Grid>
-        )
-      })}
-      </Grid>
-      </Box>
-      </div>
 
-);
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 2, sm: 8, md: 12 }}
+        >
+          {monitors.map((monitor) => {
+            {
+              /* <Grid container spacing={{ xs: 2, sm: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}> */
+            }
+            return (
+              <Grid item xs={2} sm={4} md={4}>
+                <MonitorCard key={monitor.id} monitor={monitor} />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
+    </div>
+  );
 };
-{/* <Container>
+{
+  /* <Container>
 <Grid item container direction="column" columnSpacing={{ xs: 2, sm: 2, md: 3 }} sx={{ width: '100%'}}>
 {monitors.map((monitor) => {
 return (
@@ -64,7 +70,8 @@ return (
 })}
 </Grid>
 
-</Container> */}
+</Container> */
+}
 
 export const MonitorCard = (props) => {
   const { monitor } = props;
@@ -106,6 +113,5 @@ export const MonitorCard = (props) => {
     </div>
   );
 };
-
 
 export default Monitors;

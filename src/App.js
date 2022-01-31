@@ -117,7 +117,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/topic/laptops" element={<Laptops />}/>
             <Route path="/laptopdetails">
-              <Route path=":monitorId" element={<LaptopDetails />} />
+              <Route path=":laptopId" element={<LaptopDetails />} />
             </Route>
           {/* </Route> */}
           <Route path="/topic/monitors" element={<Monitors />}/>

@@ -71,6 +71,37 @@ const laptops = [
    }
 ]
 
+const laptopDetails = [
+  {
+    id: "0",
+    brand: "‎Lenovo",
+    Series: "Legion 5 15",
+    model: "‎82B1000AUS",
+    operating_system: "‎Windows 10 Home",
+    weight: "5.41 pounds",
+    screen_size: "15.6 Inches",
+    screen_resolution:	"‎1920 x 1080",
+    processor: "2.9 GHz ryzen_7_4800h",
+    ram: "‎16 GB DDR4",
+    memory_speed: "3200 MHz",
+    hard_drive: "‎512 GB Flash Memory Solid State"
+  },
+  {
+    id: "1",
+    brand: "Dell",
+    Series: "Dell G15",
+    model: "HU333III0",
+    operating_system: "‎Windows 10 Home",
+    weight: "6.41 pounds",
+    screen_size: "15.6 Inches",
+    screen_resolution: "‎1920 x 1080",
+    processor: "2.9 GHz Intel Core i7",
+    ram: "‎16 GB DDR4",
+    memory_speed: "3200 MHz",
+    hard_drive: "1 TB Flash Memory Solid State"
+  }
+]
+
 export function getTopics() {
   return topics
 }
@@ -114,4 +145,12 @@ export function getLaptops() {
 
 export function getLaptop(laptopId) {
   return laptops.find( ({id}) => id === laptopId )
+}
+
+export function getLaptopDetails() {
+  return laptopDetails
+}
+
+export function getLaptopDetailsById(laptopId) {
+  return laptopDetails.find( ({id}) => id === laptopId )
 }
