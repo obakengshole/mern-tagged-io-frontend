@@ -74,17 +74,19 @@ const laptops = [
 const laptopDetails = [
   {
     id: "0",
-    brand: "‎Lenovo",
-    Series: "Legion 5 15",
-    model: "‎82B1000AUS",
-    operating_system: "‎Windows 10 Home",
-    weight: "5.41 pounds",
-    screen_size: "15.6 Inches",
-    screen_resolution:	"‎1920 x 1080",
-    processor: "2.9 GHz ryzen_7_4800h",
-    ram: "‎16 GB DDR4",
-    memory_speed: "3200 MHz",
-    hard_drive: "‎512 GB Flash Memory Solid State"
+    specs: {
+      brand: "‎Lenovo",
+      Series: "Legion 5 15",
+      model: "‎82B1000AUS",
+      operating_system: "‎Windows 10 Home",
+      weight: "5.41 pounds",
+      screen_size: "15.6 Inches",
+      screen_resolution:	"‎1920 x 1080",
+      processor: "2.9 GHz ryzen_7_4800h",
+      ram: "‎16 GB DDR4",
+      memory_speed: "-",
+      hard_drive: "‎512 GB Flash Memory Solid State"
+    }
   },
   {
     id: "1",
@@ -97,8 +99,15 @@ const laptopDetails = [
     screen_resolution: "‎1920 x 1080",
     processor: "2.9 GHz Intel Core i7",
     ram: "‎16 GB DDR4",
-    memory_speed: "3200 MHz",
+    memory_speed: "",
     hard_drive: "1 TB Flash Memory Solid State"
+  }
+]
+
+const productDescription = [
+  {
+    id: "0",
+    details: "Thin and light, the Lenovo Legion 5 pairs unparalleled flexibility with incredible power, offering a plethora of performance options for any gamer in a clean, minimalist design. Featuring AMD Ryzen 7 processors with 8 ultra-responsive cores, NVIDIA GTX 1660Ti graphics, and 16 GB DDR4 supported memory, this uncompromising gaming laptop elevates your favorite AAA titles with breathtakingly immersive experiences via a high refresh screen. The crisp 1080p display delivers outstanding clarity and deep colors, with a 144 Hz refresh rate for full-fidelity gaming."
   }
 ]
 

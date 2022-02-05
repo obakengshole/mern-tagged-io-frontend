@@ -83,6 +83,18 @@ const App = () => {
       </Container>
     </Navbar> */}
 
+{/* <Router>
+  <nav style={{ margin: 10 }}>
+    <Link to="/" style={{ padding: 5 }}>
+      Home
+    </Link>
+    <Link to="/about" style={{ padding: 5 }}>
+      About
+    </Link>
+  </nav>
+  {/* Rest of the code remains same 
+</Router> */}
+
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -112,7 +124,7 @@ const App = () => {
 
       <p />
 
-      <Container>
+      <Container>x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topic/laptops" element={<Laptops />}/>
