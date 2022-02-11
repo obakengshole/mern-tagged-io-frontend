@@ -2,12 +2,20 @@ const topics = [
   {
     id: "0",
     name: "laptops",
+    title: "Gaming Laptops",
     image: "https://www.lenovo.com/medias/Legion-5Pro-16-AMD-88GMY501578-725x515.png?context=bWFzdGVyfHJvb3R8NjM3ODR8aW1hZ2UvcG5nfGg0Ny9oMWEvMTE3ODg3NTg3MTIzNTAucG5nfDI5NTYwMTZmNDFlZjEyYmY2YmJlYzJmODZhMTFkN2ZmOGI5NGYzOGI1ODRkYmMzZjg5NjM1YzM2MzllYzhkZWI"
   },
   {
     id: "1",
     name: "monitors",
+    title: "Monitors",
     image: "https://www.lowyat.net/wp-content/uploads/2021/04/Samsung-Odyssey-G9-2021-refresh-800-450x300.jpg"
+  },
+  {
+    id: "2",
+    name: "gameperformancestats",
+    title: "Game Performance Stats",
+    image: "../static/images/graph.jpeg"
   }
 ]
 
@@ -67,7 +75,7 @@ const laptops = [
       id: "2",
       title: "Lenovo Legion 5",
       image: "https://www.lenovo.com/medias/Legion-5Pro-16-AMD-88GMY501578-725x515.png?context=bWFzdGVyfHJvb3R8NjM3ODR8aW1hZ2UvcG5nfGg0Ny9oMWEvMTE3ODg3NTg3MTIzNTAucG5nfDI5NTYwMTZmNDFlZjEyYmY2YmJlYzJmODZhMTFkN2ZmOGI5NGYzOGI1ODRkYmMzZjg5NjM1YzM2MzllYzhkZWI",
-      text: "Lenovo Legion 5 Pro 82JQ009DIN is ‎Windows 10 Home Laptop from ‎Lenovo. This Laptop has Powered by ‎AMD ‎Ryzen 7 Processor. Moreover, This ‎16inch laptop has ‎a 2560x1600 Pixels Screen Resolution. It has 32GB RAM & 1TB SSD as Internal Storage. For All your Graphical functions, It has ‎NVIDIA ‎NVIDIA® GeForce® RTX™ 3070 8GB GDDR6, Boost Clock 1560 / 1620MHz, TGP 140W. This Lenovo Legion 5 Pro 82JQ009DIN will give you ‎4.2 Hours of Battery life as claimed by Brand." 
+      text: "Lenovo Legion 5 Pro 82JQ009DIN is ‎Windows 10 Home Laptop from ‎Lenovo. This Laptop has Powered by ‎AMD ‎Ryzen 7 Processor. Moreover, This ‎16inch laptop has ‎a 2560x1600 Pixels Screen Resolution. It has 32GB RAM & 1TB SSD as Internal Storage. For All your Graphical functions, It has ‎NVIDIA ‎NVIDIA® GeForce® RTX™ 3070 8GB GDDR6, Boost Clock 1560 / 1620MHz, TGP 140W. This Lenovo Legion 5 Pro 82JQ009DIN will give you ‎4.2 Hours of Battery life as claimed by Brand."
    }
 ]
 
@@ -86,7 +94,51 @@ const laptopDetails = [
       ram: "‎16 GB DDR4",
       memory_speed: "-",
       hard_drive: "‎512 GB Flash Memory Solid State"
-    }
+    },
+    game_performance: [
+      {
+        id: 0,
+        title: "Cyberpunk 2077",
+        settings: "High",
+        resolution: "1920x1080",
+        ray_tracing: "Disabled",
+        DLSS: "Disabled",
+        DirectX: "12",
+        framerate: {
+          average: "70.57",
+          low: "55.26",
+          unit_of_measure: "FPS"
+        },
+      },
+      {
+        id: 1,
+        title: "Red Dead Redemption 2",
+        settings: "High",
+        resolution: "1920x1080",
+        ray_tracing: "",
+        DLSS: "",
+        DirectX: "",
+        framerate: {
+          average: "74.11",
+          low: "",
+          unit_of_measure: "FPS"
+        },
+      },
+      {
+        id: 2,
+        title: "Control",
+        settings: "High",
+        resolution: "1920x1080",
+        ray_tracing: "Disabled",
+        DLSS: "Disabled",
+        DirectX: "12",
+        framerate: {
+          average: "84.57",
+          low: "68.18",
+          unit_of_measure: "FPS"
+        },
+      }
+    ]
   },
   {
     id: "1",
@@ -108,6 +160,27 @@ const productDescription = [
   {
     id: "0",
     details: "Thin and light, the Lenovo Legion 5 pairs unparalleled flexibility with incredible power, offering a plethora of performance options for any gamer in a clean, minimalist design. Featuring AMD Ryzen 7 processors with 8 ultra-responsive cores, NVIDIA GTX 1660Ti graphics, and 16 GB DDR4 supported memory, this uncompromising gaming laptop elevates your favorite AAA titles with breathtakingly immersive experiences via a high refresh screen. The crisp 1080p display delivers outstanding clarity and deep colors, with a 144 Hz refresh rate for full-fidelity gaming."
+  }
+]
+
+const gamePerformanceStats = [
+  {
+    id: 0,
+    laptopId: 0,
+
+    operating_system: "Windows 10",
+    version: "21H1",
+    nvidia_drivers: "471.11",
+    hybrid_mode: "Off",
+    performance_mode: "On",
+    ram: "2x 8GB DDR4-3200 CL22"
+  }
+]
+
+const gameStats = [
+  {
+    id: "0",
+    title: "Cyberpunk 2077"
   }
 ]
 

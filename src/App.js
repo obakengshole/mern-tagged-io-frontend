@@ -27,6 +27,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Topics from "./tech/pages/Topics";
 import LaptopDetails from "./tech/pages/LaptopDetails";
 import Laptops from "./tech/pages/Laptops";
+import GamePerformanceStats from "./tech/pages/GamePerformanceStats";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -124,7 +125,7 @@ const App = () => {
 
       <p />
 
-      <Container>x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+      <Container>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topic/laptops" element={<Laptops />}/>
@@ -136,6 +137,7 @@ const App = () => {
             <Route path="/monitordetails">
               <Route path=":monitorId" element={<MonitorDetails />} />
             </Route>
+          <Route path="/topic/gameperformancestats" element={<GamePerformanceStats />}/>
           {/* </Route> */}
           {/* <Route component={Error} /> */}
         </Routes>

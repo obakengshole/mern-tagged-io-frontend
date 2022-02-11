@@ -86,7 +86,7 @@ const Home = () => {
                 component="img"
                 height="149"
                 image={topic.image}
-                alt="laptop"
+                alt={topic.title}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">

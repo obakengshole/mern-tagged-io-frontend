@@ -24,7 +24,7 @@ const Topics = (props) => {
       topics.map(topic => {
         return(
             <p>
-            <TopicCard key={topic.id} title={topic.name} image={topic.image} detailsPage={topic.detailsPage}/>
+            <TopicCard key={topic.id} title={topic.title} image={topic.image} detailsPage={topic.detailsPage}/>
             </p>
           )
         })

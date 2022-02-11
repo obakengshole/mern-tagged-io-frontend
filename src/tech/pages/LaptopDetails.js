@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
@@ -9,9 +8,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-
-// import { Tab } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
 
 import { Tab, Tabs, TabContainer, TabContent, TabPane, Row, Col, Nav } from 'react-bootstrap'
 
