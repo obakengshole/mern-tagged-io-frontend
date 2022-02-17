@@ -166,14 +166,269 @@ const productDescription = [
 const gamePerformanceStats = [
   {
     id: 0,
-    laptopId: 0,
-
+    title: "Cyberpunk 2077",
     operating_system: "Windows 10",
     version: "21H1",
     nvidia_drivers: "471.11",
     hybrid_mode: "Off",
     performance_mode: "On",
-    ram: "2x 8GB DDR4-3200 CL22"
+    settings: "High",
+    resolution: "1920x1080",
+    ray_tracing: "Disabled",
+    // ram: "2x 8GB DDR4-3200 CL22",
+    DLSS: "Disabled",
+    DirectX: "12",
+    laptops: [
+      {
+        id: 0,
+        laptopId: 0,
+        title: "Lenovo Legion 5",
+        framerate: {
+          average: "70.57",
+          one_percent_low: "55.26",
+        }
+      },
+      {
+        id: 1,
+        laptopId: 0,
+        title: "MSI GE76 Raider 11UH",
+        cpu: "i9-11980HK",
+        gpu: "RTX 3080",
+        ram: "16GB",
+        framerate: {
+          average: "97.32",
+          one_percent_low: "73.95",
+        }
+      },
+      {
+        id: 2,
+        laptopId: 0,
+        title: "Lenovo Legion 7",
+        cpu: "Ryzen 9 5900HX",
+        gpu: "RTX 3080",
+        ram: "16GB",
+        framerate: {
+          average: "93.86",
+          one_percent_low: "68.63",
+        }
+      },
+      {
+        id: 3,
+        laptopId: 0,
+        title: "Lenovo Legion 5 Pro",
+        cpu: "Ryzen 7 5800H",
+        gpu: "RTX 3070",
+        ram: "16GB",
+        framerate: {
+          average: "83.95",
+          one_percent_low: "58.68",
+        }
+      },
+      {
+        id: 4,
+        laptopId: 0,
+        title: "ASUS Strix G15 Advantage",
+        cpu: "Ryzen 9 5900HX",
+        gpu: "AMD 6800M",
+        ram: "",
+        framerate: {
+          average: "79.49",
+          one_percent_low: "52.95",
+        }
+      },
+      {
+        id: 5,
+        laptopId: 0,
+        title: "ASUS Zephyrus M16",
+        cpu: "Intel i9-11900H",
+        gpu: "RTX 3070",
+        ram: "",
+        framerate: {
+          average: "74.69",
+          one_percent_low: "53.93",
+        }
+      },
+      {
+        id: 6,
+        laptopId: 0,
+        title: "Alienware m15 R5",
+        cpu: "Ryzen 9 5900HX",
+        gpu: "RTX 3070",
+        ram: "",
+        framerate: {
+          average: "74.55",
+          one_percent_low: "52.68",
+        }
+      },
+      {
+        id: 7,
+        laptopId: 0,
+        title: "HP Omen 15z-en100",
+        cpu: "Ryzen 7 5900H",
+        gpu: "RTX 3070",
+        ram: "",
+        framerate: {
+          average: "71.50",
+          one_percent_low: "55.78",
+        }
+      },
+      {
+        id: 8,
+        laptopId: 0,
+        title: "Lenovo Legion 5",
+        cpu: "Ryzen 7 5900H",
+        gpu: "RTX 3060",
+        ram: "",
+        framerate: {
+          average: "68.12",
+          one_percent_low: "49.72",
+        }
+      },
+      {
+        id: 9,
+        laptopId: 0,
+        title: "Acer Nitro 5",
+        cpu: "Ryzen 5 5600H",
+        gpu: "RTX 3060",
+        ram: "",
+        framerate: {
+          average: "60.88",
+          one_percent_low: "50.59",
+        }
+      },
+      {
+        id: 10,
+        laptopId: 0,
+        title: "MSI GS76 Stealth 11UE",
+        cpu: "Intel i7-11800H",
+        gpu: "RTX 3060",
+        ram: "",
+        framerate: {
+          average: "58.85",
+          one_percent_low: "47.86",
+        }
+      },
+      {
+        id: 11,
+        laptopId: 0,
+        title: "Acer Nitro 5",
+        cpu: "Intel i5-11400H",
+        gpu: "RTX 3060",
+        ram: "",
+        framerate: {
+          average: "58.73",
+          one_percent_low: "49.04",
+        }
+      },
+      {
+        id: 12,
+        laptopId: 0,
+        title: "ASUS Zephyrus G14 GA401QM",
+        cpu: "Ryzen 9 5900HS",
+        gpu: "RTX 3060",
+        ram: "",
+        framerate: {
+          average: "58.31",
+          one_percent_low: "44.38",
+        }
+      },
+      {
+        id: 13,
+        laptopId: 0,
+        title: "Acer Nitro 5",
+        cpu: "Intel i5-11400H",
+        gpu: "RTX 3060",
+        ram: "Stock RAM (1x 8GB x16)",
+        framerate: {
+          average: "47.48",
+          one_percent_low: "28.21",
+        }
+      },
+      {
+        id: 14,
+        laptopId: 0,
+        title: "Lenovo Legion 5",
+        cpu: "Ryzen 7 4800H",
+        gpu: "GTX 1660 Ti",
+        ram: "",
+        framerate: {
+          average: "45.70",
+          one_percent_low: "38.70",
+        }
+      },
+      {
+        id: 15,
+        laptopId: 0,
+        title: "Dell G5 15 SE 5505",
+        cpu: "Ryzen 5 4600H",
+        gpu: "AMD 5600M",
+        ram: "",
+        framerate: {
+          average: "42.59",
+          one_percent_low: "35.21",
+        }
+      },
+      {
+        id: 16,
+        laptopId: 0,
+        title: "XMG Core 17 Tongfang GM7TGER",
+        cpu: "Intel i7-11800H",
+        gpu: "RTX 3050 Ti",
+        ram: "",
+        framerate: {
+          average: "38.52",
+          one_percent_low: "30.00",
+        }
+      },
+      {
+        id: 17,
+        laptopId: 0,
+        title: "XMG Core 17 Tongfang GM7TGER",
+        cpu: "Intel i7-11800H",
+        gpu: "RTX 3050",
+        ram: "",
+        framerate: {
+          average: "38.52",
+          one_percent_low: "30.00",
+        }
+      },
+      {
+        id: 18,
+        laptopId: 0,
+        title: "Lenovo Y530 (i5-8300H/GTX 1060)",
+        cpu: "Intel i5-8300H",
+        gpu: "GTX 1060",
+        ram: "",
+        framerate: {
+          average: "27.75",
+          one_percent_low: "22.05",
+        }
+      },
+      {
+        id: 19,
+        laptopId: 0,
+        title: "Acer Nitro 5",
+        cpu: "Ryzen 5 4600H",
+        gpu: "GTX 1650",
+        ram: "",
+        framerate: {
+          average: "25.66",
+          one_percent_low: "20.68",
+        }
+      },
+      {
+        id: 20,
+        laptopId: 0,
+        title: "Lenovo L340",
+        cpu: "Intel i5-9300H",
+        gpu: "GTX 1650",
+        ram: "",
+        framerate: {
+          average: "23.51",
+          one_percent_low: "16.75",
+        }
+      },
+    ]
   }
 ]
 
@@ -235,4 +490,8 @@ export function getLaptopDetails() {
 
 export function getLaptopDetailsById(laptopId) {
   return laptopDetails.find( ({id}) => id === laptopId )
+}
+
+export function getGamePerformanceStats() {
+  return gamePerformanceStats
 }

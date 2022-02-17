@@ -5,6 +5,10 @@ import Col from 'react-bootstrap/Col'
 import EChartsReactCore from "echarts-for-react"
 import { populationDataFemale } from '../../DataFemale';
 import { populationDataMale } from '../../DataMale';
+import { useRef } from 'react';
+import { Bar, getDatasetAtEvent } from 'react-chartjs-2';
+import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, Title, Tooltip, Legend } from 'chart.js';
+import { getGamePerformanceStats } from '../../services/api';
 
 //     <Row xs={1} md={2} lg={4} className="g-4">
 //     {Array.from({ length: 4 }).map((_, idx) => (
@@ -22,73 +26,105 @@ import { populationDataMale } from '../../DataMale';
 //       </Col>
 //     ))}
 //   </Row>
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+)
+
+const labels = ['Lenovo Legion 5', 'Acer Nitro 5']
+const data2 = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => 1) 
+    }
+  ]  
+};
+
+const data1 = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => 1) 
+    }
+  ]  
+};
+
 export const GamePerformanceStats = () => {
-    const getOption = () => {
-       const option = {
-            dataset: [
-              {
-                dimensions: ['score', 'amount', 'product'],
-                source: [
-                  [89.3, 58212, 'Matcha Latte'],
-                  [57.1, 78254, 'Milk Tea'],
-                  [74.4, 41032, 'Cheese Cocoa'],
-                  [50.1, 12755, 'Cheese Brownie'],
-                  [89.7, 20145, 'Matcha Cocoa'],
-                  [68.1, 79146, 'Tea'],
-                  [19.6, 91852, 'Orange Juice'],
-                  [10.6, 101852, 'Lemon Juice'],
-                  [32.7, 20112, 'Walnut Brownie']
-                ]
-              },
-              {
-                transform: {
-                  type: 'sort',
-                  config: { dimension: 'amount', order: 'asc'}
-                }
-              }
-            ],
-            grid: { containLabel: true },
-            xAxis: { name: 'amount' },
-            yAxis: { type: 'category' },
-            visualMap: {
-              orient: 'horizontal',
-              left: 'center',
-              min: 10,
-              max: 100,
-              text: ['High Score', 'Low Score'],
-              // Map the score column to color
-              dimension: 0,
-              inRange: {
-                color: ['#65B581', '#FFCE34', '#FD665F']
-              }
-            },
-            series: [
-              {
-                type: 'bar',
-                datasetIndex: 1,
-                encode: {
-                  // Map the "amount" column to X axis.
-                  x: 'amount',
-                  // Map the "product" column to Y axis
-                  y: 'product'
-                }
-              }
-            ]
-          };
-          
-          return option
-      };
-      const sayHy = () => {
-        console.log("say HI")
+  const stats = getGamePerformanceStats()
+  const title = stats[0].title
+  console.log("stats", stats);
+  const keys = Object.keys(stats)
+  const values = Object.values(stats)
+  console.log("values", values[0].DLSS);
+
+  let labels = []
+  stats.map(key => {
+    key.laptops.map(laptop => {
+      labels.push(laptop.title)
+    })
+  })
+
+  // let dset = []
+  // labels.map(label => {
+  //   key.laptops.map(laptop => {
+  //     dset.push({ label:label, framerate:  })
+  //   }
+  // })
+
+  console.log("labels", labels);
+  // const labels = []
+  const datasets = [
+    {
+      data: 
+        stats.map(key => {
+          key.laptops.map(laptop => {
+            return laptop.framerate.average
+          })
+        })
+      ,
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    }
+  ]
+  
+  let data = {
+    labels: labels,
+    datasets: datasets
+  }
+  console.log("data", data);
+  const chartRef = useRef();
+  const onClick = (event) => {
+    // console.log(getDatasetAtEvent(chartRef.current, event));
+    console.log('clicked');
+  }
+
+  const options = {
+    indexAxis: 'y',
+    plugins: {
+      legend: {
+        position: 'right'
+      },
+      title: {
+        display: true,
+        text: title
       }
+    }
+  }
+
   return (
-    <EChartsReactCore
-    option={getOption()}
-        style={{ height: "80vh", left: 50, top: 50, width: "90vw" }}
-        opts={{ renderer: "svg" }}
-        onClick={sayHy}
+    <Bar
+      ref={chartRef}
+      data={data}
+      options={options}
+      onClick={onClick}
     />
   )
-};
+}
 
 export default GamePerformanceStats;
