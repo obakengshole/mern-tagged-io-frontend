@@ -6,7 +6,7 @@ import EChartsReactCore from "echarts-for-react"
 import { populationDataFemale } from '../../DataFemale';
 import { populationDataMale } from '../../DataMale';
 import { useRef } from 'react';
-import { Bar, getDatasetAtEvent } from 'react-chartjs-2';
+import { Bar, getElementAtEvent } from 'react-chartjs-2';
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, Title, Tooltip, Legend } from 'chart.js';
 import { getGamePerformanceStats } from '../../services/api';
 
@@ -64,30 +64,29 @@ export const GamePerformanceStats = () => {
   console.log("values", values[0].DLSS);
 
   let labels = []
+  let dset = []
   stats.map(key => {
     key.laptops.map(laptop => {
       labels.push(laptop.title)
+      dset.push({ title: laptop.title, framerate: laptop.framerate.average })
     })
   })
-
-  // let dset = []
-  // labels.map(label => {
-  //   key.laptops.map(laptop => {
-  //     dset.push({ label:label, framerate:  })
-  //   }
-  // })
 
   console.log("labels", labels);
   // const labels = []
   const datasets = [
     {
-      data: 
-        stats.map(key => {
-          key.laptops.map(laptop => {
-            return laptop.framerate.average
-          })
-        })
-      ,
+      label: "(FPS) Frames Per Second",
+      data: labels.map((label, i) => {
+        console.log("label.framerate", dset[i].framerate)
+        return dset[i].title === label ? dset[i].framerate : ''
+      }),
+
+        // stats.map(key => {
+        //   key.laptops.map(laptop => {
+        //     return laptop.framerate.average
+        //   })
+        // })
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     }
@@ -100,7 +99,7 @@ export const GamePerformanceStats = () => {
   console.log("data", data);
   const chartRef = useRef();
   const onClick = (event) => {
-    // console.log(getDatasetAtEvent(chartRef.current, event));
+    console.log(getElementAtEvent(chartRef.current, event));
     console.log('clicked');
   }
 
