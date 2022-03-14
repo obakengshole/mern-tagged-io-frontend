@@ -183,6 +183,7 @@ const gamePerformanceStats = [
         id: 0,
         laptopId: 0,
         title: "Lenovo Legion 5",
+        framerat: "70.57",
         framerate: {
           average: "70.57",
           one_percent_low: "55.26",
@@ -195,6 +196,7 @@ const gamePerformanceStats = [
         cpu: "i9-11980HK",
         gpu: "RTX 3080",
         ram: "16GB",
+        framerat: "70.57",
         framerate: {
           average: "97.32",
           one_percent_low: "73.95",
@@ -219,6 +221,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 7 5800H",
         gpu: "RTX 3070",
         ram: "16GB",
+        framerat: "70.57",
         framerate: {
           average: "83.95",
           one_percent_low: "58.68",
@@ -231,6 +234,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 9 5900HX",
         gpu: "AMD 6800M",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "79.49",
           one_percent_low: "52.95",
@@ -243,6 +247,7 @@ const gamePerformanceStats = [
         cpu: "Intel i9-11900H",
         gpu: "RTX 3070",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "74.69",
           one_percent_low: "53.93",
@@ -255,6 +260,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 9 5900HX",
         gpu: "RTX 3070",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "74.55",
           one_percent_low: "52.68",
@@ -267,6 +273,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 7 5900H",
         gpu: "RTX 3070",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "71.50",
           one_percent_low: "55.78",
@@ -279,6 +286,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 7 5900H",
         gpu: "RTX 3060",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "68.12",
           one_percent_low: "49.72",
@@ -291,6 +299,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 5 5600H",
         gpu: "RTX 3060",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "60.88",
           one_percent_low: "50.59",
@@ -315,6 +324,7 @@ const gamePerformanceStats = [
         cpu: "Intel i5-11400H",
         gpu: "RTX 3060",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "58.73",
           one_percent_low: "49.04",
@@ -327,6 +337,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 9 5900HS",
         gpu: "RTX 3060",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "58.31",
           one_percent_low: "44.38",
@@ -339,6 +350,7 @@ const gamePerformanceStats = [
         cpu: "Intel i5-11400H",
         gpu: "RTX 3060",
         ram: "Stock RAM (1x 8GB x16)",
+        framerat: "70.57",
         framerate: {
           average: "47.48",
           one_percent_low: "28.21",
@@ -351,6 +363,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 7 4800H",
         gpu: "GTX 1660 Ti",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "45.70",
           one_percent_low: "38.70",
@@ -363,6 +376,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 5 4600H",
         gpu: "AMD 5600M",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "42.59",
           one_percent_low: "35.21",
@@ -375,6 +389,7 @@ const gamePerformanceStats = [
         cpu: "Intel i7-11800H",
         gpu: "RTX 3050 Ti",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "38.52",
           one_percent_low: "30.00",
@@ -387,6 +402,7 @@ const gamePerformanceStats = [
         cpu: "Intel i7-11800H",
         gpu: "RTX 3050",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "38.52",
           one_percent_low: "30.00",
@@ -399,6 +415,7 @@ const gamePerformanceStats = [
         cpu: "Intel i5-8300H",
         gpu: "GTX 1060",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "27.75",
           one_percent_low: "22.05",
@@ -411,6 +428,7 @@ const gamePerformanceStats = [
         cpu: "Ryzen 5 4600H",
         gpu: "GTX 1650",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "25.66",
           one_percent_low: "20.68",
@@ -423,6 +441,7 @@ const gamePerformanceStats = [
         cpu: "Intel i5-9300H",
         gpu: "GTX 1650",
         ram: "",
+        framerat: "70.57",
         framerate: {
           average: "23.51",
           one_percent_low: "16.75",

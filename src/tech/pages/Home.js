@@ -78,7 +78,7 @@ const Home = () => {
         return (
           <div>
             <p />
-          <Card sx={{ maxWidth: 345 }}>
+          <Card raised sx={{ maxWidth: 345 }}>
             <CardActionArea
               onClick={() => navigate(`/topic/${topic.name}`)}
             >
