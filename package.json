@@ -30,6 +30,7 @@
     "react-vis": "^1.11.7",
     "reactstrap": "^8.10.0",
     "recharts": "^2.1.9",
+    "swiper": "^8.0.7",
     "victory": "^36.3.0"
   },
   "scripts": {
