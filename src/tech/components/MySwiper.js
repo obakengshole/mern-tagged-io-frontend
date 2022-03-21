@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 
 // Import Swiper styles
@@ -9,7 +9,9 @@ export default (props) => {
 
     const click = (topicId) => {
         console.log('slide clicked!!!', topicId);
+        props.selectedSlide(topicId)
     }
+
   return (
     <Swiper
       spaceBetween={20}
@@ -24,9 +26,6 @@ export default (props) => {
                 )
             })
         }
-      {/* <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide> */}
 
       <span slot="container-start">Container Start</span>
   <span slot="container-end">Container End</span>

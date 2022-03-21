@@ -448,6 +448,58 @@ const gamePerformanceStats = [
         }
       },
     ]
+  },
+
+  {
+    id: 1,
+    title: "Red Dead Redemption",
+    operating_system: "Windows 10",
+    version: "21H1",
+    nvidia_drivers: "471.11",
+    hybrid_mode: "Off",
+    performance_mode: "On",
+    settings: "High",
+    resolution: "1920x1080",
+    ray_tracing: "Disabled",
+    // ram: "2x 8GB DDR4-3200 CL22",
+    DLSS: "Disabled",
+    DirectX: "12",
+    laptops: [
+      {
+        id: 0,
+        laptopId: 0,
+        title: "Lenovo Legion 7",
+        framerate: {
+          average: "90.57",
+          one_percent_low: "55.26",
+        }
+      },
+      {
+        id: 1,
+        laptopId: 0,
+        title: "ASUS Zephyrus G14 GA401QM",
+        cpu: "i9-11980HK",
+        gpu: "RTX 3080",
+        ram: "16GB",
+        framerat: "70.57",
+        framerate: {
+          average: "99.32",
+          one_percent_low: "73.95",
+        }
+      },
+      {
+        id: 2,
+        laptopId: 0,
+        title: "Acer Predator",
+        cpu: "Ryzen 9 5900HX",
+        gpu: "RTX 3080",
+        ram: "16GB",
+        framerate: {
+          average: "83.86",
+          one_percent_low: "68.63",
+        }
+      }
+    ]
   }
 ]
 
