@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getGamePerformanceStats } from "../../services/api";
-import { Grid } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import {
   BarChart,
@@ -12,6 +12,7 @@ import {
   Bar,
   Label,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 import { useNavigate } from "react-router";
 import MySwiper from "../components/MySwiper";
@@ -29,29 +30,43 @@ export const GameChart = (props) => {
   };
 
   return (
+    // <>
+    // <ResponsiveContainer >
+    //   <BarChart width={100} data={laptops} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    //     <CartesianGrid strokeDasharray="3 3" />
+    //     <XAxis dataKey="title" angle={45} interval={0} tickSize={20} height={80} offset={15} />
+    //     {/* <XAxis height={50}/> */}
+    //     <YAxis height={50}/>
+    //     <Tooltip />
+    //     <Legend />
+    //     <Bar label={title} dataKey="framerate.average" fill="#8884d8" />
+    //   </BarChart>
+    //  </ResponsiveContainer>
+    //  </>
     <div>
-      <ResponsiveContainer minHeight={600} width="100%">
+      <ResponsiveContainer aspect={1}  height="100%" width="100%">
         <BarChart layout="vertical" width={930} height={650} data={laptops}>
           <CartesianGrid strokeDasharray="3 3" />
           <YAxis
-            dataKey="title"
             type="category"
-            width={500}
+            // width={500}
             height={100}
             interval={0}
           >
-            <Label value={title} offset={0} position="insideTop" />
           </YAxis>
           <XAxis type="number" />
           <Tooltip />
           <Legend />
           <Bar
             background
-            label
             dataKey="framerate.average"
             fill="#8884d8"
+            // maxBarSize={20}
             onClick={test.bind(this)}
-          />
+          >
+          <LabelList dataKey="title" position="inside" />
+          
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -67,7 +82,7 @@ export const GamePerformanceStats = () => {
   console.log("values", values[0].DLSS);
 
   const [selectedTitle, setSelectedTitle] = useState(0)
-  const [data, setData] = useState(stats[0].laptops)
+  const [data, setData] = useState(stats[0])
 
   useEffect(() => {
     console.log('useEffect', selectedTitle);
@@ -84,10 +99,15 @@ export const GamePerformanceStats = () => {
   }
 
   return (
-    <div>
+    <Paper elevation={3} sx={{ height: 500  }}width="100%">
       <MySwiper selectedSlide={setSelectedTitle} slideTopics={slideTopics} />
-      <GameChart data={data}/>
-    </div>
+      {/* <MySwiper /> */}
+      {/* <Grid container columns={{ xs: 2, sm: 2, md: 4 }}> */}
+        {/* <Grid item xs={1} sm={1} md={1}> */}
+          <GameChart data={data}/>
+        {/* </Grid> */}
+      {/* </Grid> */}
+      </Paper>
   );
 };
 

@@ -27,7 +27,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import Topics from "./tech/pages/Topics";
 import LaptopDetails from "./tech/pages/LaptopDetails";
 import Laptops from "./tech/pages/Laptops";
-import GamePerformanceStats from "./tech/pages/GamePerformanceStats";
+import GamePerformanceStats from "./tech/pages/GamePerformanceStats2";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",

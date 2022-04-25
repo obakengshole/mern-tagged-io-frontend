@@ -417,7 +417,7 @@ const gamePerformanceStats = [
         ram: "",
         framerat: "70.57",
         framerate: {
-          average: "27.75",
+          average: "7.75",
           one_percent_low: "22.05",
         }
       },
