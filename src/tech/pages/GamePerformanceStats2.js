@@ -10,6 +10,7 @@ import MySwiper from "../components/MySwiper";
 import  {ScrollMenu} from "react-horizontal-scrolling-menu";
 import '../components/myswiper.css'
 import HorizontalScroll2 from '../components/horizontal-scroll/HorizontalScroll2'
+import { TagInput } from "../components/tag-input/TagInput";
 
 export const GameChart = (props) => {
   let { data } = props
@@ -257,6 +258,7 @@ export const GamePerformanceStats = () => {
     <>
     <Paper elevation={3} sx={{ height: '100%' }}width="100%">
     <HorizontalScroll2 slideTopics={slideTopics} selectedSlide={setSelectedTitle}/>
+    <TagInput />
       <Grid container spacing={2}>
         <Grid item xs={1} sm={1} md={4}>
           <GameChart data={data}/>
