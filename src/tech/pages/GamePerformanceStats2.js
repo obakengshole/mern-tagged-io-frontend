@@ -11,11 +11,14 @@ import  {ScrollMenu} from "react-horizontal-scrolling-menu";
 import '../components/myswiper.css'
 import HorizontalScroll2 from '../components/horizontal-scroll/HorizontalScroll2'
 import { TagInput } from "../components/tag-input/TagInput";
+import { Tags } from "../components/tags/Tags";
+import Select from 'react-select'
 
 export const GameChart = (props) => {
-  let { data } = props
-  const title = data.title
-  const laptops = data.laptops
+  let { laptopData } = props
+  // const title = data.title   original
+  // const laptops = data.laptops   original
+  const laptops = laptopData
   console.log("data.length: ", laptops.length);
   const navigate = useNavigate();
 
@@ -97,47 +100,13 @@ export const GameChart = (props) => {
 
   return (
 
-      <Chart options={options} series={series} type="bar" width={400} height={850} />
+    // <div className={{resize: 'both', overflow: 'auto'}}>
+    // <div class="resize: 'both'; overflow: 'auto'">
+      <Chart options={options} series={series} type="bar" width={400} height={650}/>
+      // </div>
 
     // <>
-    // <ResponsiveContainer >
-    //   <BarChart width={100} data={laptops} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-    //     <CartesianGrid strokeDasharray="3 3" />
-    //     <XAxis dataKey="title" angle={45} interval={0} tickSize={20} height={80} offset={15} />
-    //     {/* <XAxis height={50}/> */}
-    //     <YAxis height={50}/>
-    //     <Tooltip />
-    //     <Legend />
-    //     <Bar label={title} dataKey="framerate.average" fill="#8884d8" />
-    //   </BarChart>
-    //  </ResponsiveContainer>
-    //  </>
-    // <div>
-    //   <ResponsiveContainer aspect={1}  height="100%" width="100%">
-    //     <BarChart layout="vertical" width={930} height={650} data={laptops}>
-    //       <CartesianGrid strokeDasharray="3 3" />
-    //       <YAxis
-    //         dataKey="title"
-    //         type="category"
-    //         width={500}
-    //         height={100}
-    //         interval={0}
-    //       >
-    //         <Label value={title} offset={0} position="insideTop" />
-    //       </YAxis>
-    //       <XAxis type="number" />
-    //       <Tooltip />
-    //       <Legend />
-    //       <Bar
-    //         background
-    //         label
-    //         dataKey="framerate.average"
-    //         fill="#8884d8"
-    //         onClick={test.bind(this)}
-    //       />
-    //     </BarChart>
-    //   </ResponsiveContainer>
-    // </div>
+    
   )
 }
 
@@ -238,13 +207,33 @@ export const GamePerformanceStats = () => {
   console.log("values", values[0].DLSS);
 
   const [selectedTitle, setSelectedTitle] = useState(0)
+  const [currentSelectedTitle, setCurrentSelectedTitle] = useState(0)
+  const [currentLaptopData, setCurrentLaptopData] = useState(0)
+  const [filters, setFilters] = useState([])
   const [data, setData] = useState(stats[0])
+  const [laptopData, setLaptopData] = useState(data.laptops)
+  const [observableLaptopData, setObservableLaptopData] = useState(data.laptops)
 
   useEffect(() => {
-    console.log('useEffect', selectedTitle);
-    setData( findDataById(selectedTitle) )
+    console.log('useEffect selectedTitle', selectedTitle);
+    console.log('useEffect currentSelectedTitle', currentSelectedTitle);
+    if (selectedTitle !== currentSelectedTitle) {
+      // setData( findDataById(selectedTitle) )
+      setObservableLaptopData( getLaptopDataFromSelectedTitle(selectedTitle) )
+      console.log('useEffect filters.length:', filters.length);
+      if (filters.length > 0) {
+        console.log('useEffect apply filters:', filters);
+        applyFilter(filters)
+      } 
+      // else {
+      //   console.log('useEffect clear filters');
+      //   clearFilters()
+      // }
+    }
+    setCurrentSelectedTitle(selectedTitle)
+    // updateCurrentSelectedTitle(selectedTitle)
     console.log('findDataById', data);
-  }, [selectedTitle])
+  }, [selectedTitle, observableLaptopData])
 
   const slideTopics = stats.map(stat => {
     return { id: stat.id, topic: stat.title }
@@ -254,14 +243,90 @@ export const GamePerformanceStats = () => {
     return stats[id]
   }
 
+  const getLaptopDataFromSelectedTitle = (selectedTitle) => {
+    return findDataById(selectedTitle).laptops
+  }
+
+  const updateCurrentSelectedTitle = (selectedTitle) => {
+    setCurrentSelectedTitle(selectedTitle)
+    if (filters.length > 0) {
+        console.log('useEffect apply filters:', filters);
+        applyFilter(filters)
+    }
+  }
+
+  const options = [
+    { value: 'Lenovo', label: 'Brand: Lenovo' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
+
+  const filterLaptopsByBrand = (brand) => {
+    console.log('filterLaptopsByBrand:', brand);
+    // const laptops = data.laptops
+    const filteredLaptops = observableLaptopData.filter((laptop) => brand === getLaptopBrand(laptop.title))
+    console.log('filteredLaptops:', filteredLaptops);
+    const filteredLaptops2 = observableLaptopData.filter((laptop) => brand !== getLaptopBrand(laptop.title))
+    console.log('filteredLaptops2:', filteredLaptops2);
+    if (filteredLaptops) {
+      console.log('setObservableLaptopData called');
+      setObservableLaptopData(filteredLaptops)
+    } else {
+      setObservableLaptopData( getLaptopDataFromSelectedTitle(selectedTitle) )
+    }
+  }
+
+  const getLaptopBrand = (laptopTitle) => {
+    const indexOfSpace = laptopTitle.indexOf(' ', 0)
+    
+    const s = laptopTitle.substring(0, indexOfSpace)
+    return s
+    // console.log('getLaptopBrand', s);
+  }
+
+  const applyFilter = (options) => {
+    console.log('onChange options value ', options);
+    setObservableLaptopData( [{}] )
+    addFilters(options)
+    console.log('onChange currentLaptopData ', observableLaptopData);
+    options.map((option) => {
+      console.log('option value ', option.value);
+      console.log('option label ', option.label);
+      if (option.label.includes('Brand')) {
+        console.log('filter by brand');
+        filterLaptopsByBrand(option.value)
+      }
+    }) 
+    if (options.length === 0) {
+      console.log('No option selected, clearing filters');
+      clearFilters()
+    }
+  }
+  
+  const filter = (options) => {
+    applyFilter(options)
+  }
+
+  const addFilters = (options) => {
+    console.log('adding filters', options);
+    setFilters(options)
+  }
+  
+  const clearFilters = () => {
+    console.log('clearing filter');
+    setFilters([])
+    setObservableLaptopData( getLaptopDataFromSelectedTitle(selectedTitle) )
+  }
+
   return (
     <>
-    <Paper elevation={3} sx={{ height: '100%' }}width="100%">
+    <Paper elevation={3} xs={{resize: 'both', overflow: 'auto'}} width="100%">
     <HorizontalScroll2 slideTopics={slideTopics} selectedSlide={setSelectedTitle}/>
-    <TagInput />
+    <div className={{padding: '20px'}}></div>
+    <Select options={options} onChange={filter} isMulti/>
       <Grid container spacing={2}>
-        <Grid item xs={1} sm={1} md={4}>
-          <GameChart data={data}/>
+        <Grid item xs={2} sm={2} md={4}>
+          <GameChart laptopData={observableLaptopData}/>
       </Grid>
         </Grid>
       </Paper>

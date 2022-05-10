@@ -43,6 +43,32 @@ export const GameChart = (props) => {
     //   </BarChart>
     //  </ResponsiveContainer>
     //  </>
+    // <div>
+    //   <ResponsiveContainer aspect={1}  height="100%" width="100%">
+    //     <BarChart layout="vertical" width={930} height={650} data={laptops}>
+    //       <CartesianGrid strokeDasharray="3 3" />
+    //       <YAxis
+    //         dataKey="title"
+    //         type="category"
+    //         width={500}
+    //         height={100}
+    //         interval={0}
+    //       >
+    //         <Label value={title} offset={0} position="insideTop" />
+    //       </YAxis>
+    //       <XAxis type="number" />
+    //       <Tooltip />
+    //       <Legend />
+    //       <Bar
+    //         background
+    //         label
+    //         dataKey="framerate.average"
+    //         fill="#8884d8"
+    //         onClick={test.bind(this)}
+    //       />
+    //     </BarChart>
+    //   </ResponsiveContainer>
+    // </div>
     <div>
       <ResponsiveContainer aspect={1}  height="100%" width="100%">
         <BarChart layout="vertical" width={930} height={650} data={laptops}>
